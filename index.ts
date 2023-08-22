@@ -63,9 +63,3 @@ function findMaxNumber(numbers: number[]): number {
 //   console.log(`The greatest number is: ${maxNumber}`);
 
 
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/SopherDavid/TypeScript.git
-git push -u origin main
