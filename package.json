@@ -8,8 +8,8 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "dev": "tsx index.ts",
-    "build": "tsc index.ts"
+    "dev": "tsx ex1.ts",
+    "build": "tsc ex1.ts"
   },
   "keywords": [],
   "author": "",

@@ -56,10 +56,104 @@ function findMaxNumber(numbers: number[]): number {
       }
     }
     return max;
-  }
+}
   
 //   const numbersArray = [23, 8, 42, 15, 6];
 //   const maxNumber = findMaxNumber(numbersArray);
 //   console.log(`The greatest number is: ${maxNumber}`);
 
+// 7.
+interface Person {
+        name:  string;
+        age: number;
+        isStudent: boolean;
+}
 
+// 8.
+function printPerson(person: Person): void {
+    for (const key in person) {
+        console.log(`${key}:${person[key]}`);
+
+    }
+}
+// printPerson( {
+//     name: "David",
+//     age : 28,
+//     isStudent : true
+// })
+
+// 9.
+function ageAuthenticator(person: Person) {
+    if (person.age < 8) {
+        console.log("True")
+    } else{
+        console.log("False")
+    }
+}
+
+//ageAuthenticator( {
+    //     name: "David",
+    //     age : 28,
+    //     isStudent : true
+    // })
+
+
+
+// 10. 
+interface Book {
+    title: string
+    author: string 
+    year: number
+}
+
+// 11.
+interface Reader {
+    person: Person,
+    favoriteBook: Book
+}
+
+// 12.
+const readers: Reader[] = [
+    {
+      person: { name: "Alice", age: 25, isStudent: false },
+      favoriteBook: { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+    },
+    {
+      person: { name: "Bob", age: 30, isStudent: true },
+      favoriteBook: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+    },
+    {
+      person: { name: "Charlie", age: 22, isStudent: true },
+      favoriteBook: { title: "1984", author: "George Orwell", year: 1949 },
+    },
+    {
+      person: { name: "Eve", age: 95, isStudent: false },
+      favoriteBook: { title: "Pride and Prejudice", author: "Jane Austen", year: 1813 },
+    },
+    {
+      person: { name: "David", age: 35, isStudent: false },
+      favoriteBook: { title: "The Lord of the Rings", author: "J.R.R. Tolkien", year: 1954 },
+    },
+  ];
+
+  function findOldestReader(readers: Reader[]): Reader | undefined {
+    let oldest: Reader | undefined = undefined;
+    
+    for (const reader of readers) {
+      if (!oldest || reader.person.age > oldest.person.age) {
+        oldest = reader;
+      }
+    }
+    
+    return oldest;
+  }
+  
+  const oldestReader = findOldestReader(readers);
+
+  // if (oldestReader) {
+  //   console.log(`The oldest reader is ${oldestReader.person.name}, aged ${oldestReader.person.age}.`);
+  //   console.log(`Their favorite book is "${oldestReader.favoriteBook.title}" by ${oldestReader.favoriteBook.author}, published in ${oldestReader.favoriteBook.year}.`);
+  // } else {
+  //   console.log("No readers found.");
+  // }
+  
